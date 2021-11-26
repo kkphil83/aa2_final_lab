@@ -7,7 +7,7 @@
     state: present
 
 - name: Install the 'Development tools' package group
-  yum:
+  package:
     name: "@Development tools"
     state: present
 
