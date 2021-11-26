@@ -13,6 +13,7 @@
   package:
     name: "@Development tools"
     state: present
+  ignore_errors: yes
 
 - name: Install flask packages
   package:
