@@ -16,7 +16,9 @@
   package:
     name: "{{ __package }}"
     state: present
-  loop: "{{ app_yum_packages }}"
+  loop:
+    - "{{ app_yum_repo }}"
+    - "{{ app_yum_packages }}"
   loop_control:
     loop_var: __package
 
