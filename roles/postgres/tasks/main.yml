@@ -11,6 +11,7 @@
     disable_gpg_check: true
   loop:
     - "{{ postgres_rhel8_repo }}"
+    - "{{ postgres_library_repo }}"
     - "{{ postgres_packages }}"
   loop_control:
     loop_var: __package
