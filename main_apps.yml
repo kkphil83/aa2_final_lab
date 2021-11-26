@@ -11,6 +11,15 @@
     - debug:
         msg: "Start App server setup"
 
+    - name: Setup firewall
+      include_role:
+        name: firewall
+      vars:
+        firewall_services:
+          - http
+        firewall_tcp_ports:
+          - 8080
+
     - name: Setup app server
       include_role:
         name: app_servers

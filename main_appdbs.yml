@@ -10,6 +10,15 @@
     - debug:
         msg: "Start PostgreSQL 12 setup"
 
+    - name: Setup firewall
+      include_role:
+        name: firewall
+      vars:
+        firewall_services:
+          - postgres
+        firewall_tcp_ports:
+          - 5432
+
     - name: Setup PostgreSQL 12 server
       include_role:
         name: postgres
