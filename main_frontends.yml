@@ -18,6 +18,7 @@
           - http
         firewall_tcp_ports:
           - 80
+          - 443
 
     - name: Setup HAproxy server
       include_role:
