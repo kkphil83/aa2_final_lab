@@ -16,6 +16,7 @@
   package:
     name: "{{ __package }}"
     state: present
+    disable_gpg_check: true
   loop:
     - "{{ app_yum_repo }}"
     - "{{ app_yum_packages }}"
