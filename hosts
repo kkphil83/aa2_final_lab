@@ -1,15 +1,12 @@
 [load_balancers]
-frontend1.d7c6.internal
+frontend1  ansible_ssh_host=frontend1."{{ GUID }}".internal
 
 [app_servers]
-app1.d7c6.internal
-app2.d7c6.internal
+app1  ansible_ssh_host=app1."{{ GUID }}".internal
+app2  ansible_ssh_host=app2."{{ GUID }}".internal
 
 [database_servers]
-appdb1.d7c6.internal
-
-[control_node]
-localhost
+appdb1 ansible_ssh_host=appdb1."{{ GUID }}".internal
 
 [internal:children]
 load_balancers
@@ -18,10 +15,3 @@ database_servers
 
 [all:vars]
 GUID="{{ lookup('env', 'GUID') }}"
-ansible_connection=local
-ansible_python_interpreter="{{ ansible_playbook_python }}"
-
-[privilege_escalation]
-become = true
-become_method = sudo
-become_user = root

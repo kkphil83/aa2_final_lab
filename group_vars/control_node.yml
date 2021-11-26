@@ -5,7 +5,7 @@ openstack_cloud: "{{GUID}}-project"
 openstack_servers:
 
   - instance_name: app1
-    AnsibleGroup: backend_servers
+    AnsibleGroup: app_servers
     deployment: prod
     security_group_name: "{{GUID}}-HostSG"
     image: "{{ _server_image | default('rhel-8.3') }}"
@@ -14,7 +14,7 @@ openstack_servers:
     key_name: "{{GUID}}-keypair"
     network: "{{GUID}}-prod-network"
   - instance_name: app2
-    AnsibleGroup: backend_servers
+    AnsibleGroup: app_servers
     deployment: prod
     security_group_name: "{{GUID}}-HostSG"
     image: "{{ _server_image | default('rhel-8.3') }}"
@@ -23,7 +23,7 @@ openstack_servers:
     key_name: "{{GUID}}-keypair"
     network: "{{GUID}}-prod-network"
   - instance_name: appdb1
-    AnsibleGroup: database_servers
+    AnsibleGroup: appdb_servers
     deployment: prod
     security_group_name: "{{GUID}}-HostSG"
     image: "{{ _server_image | default('rhel-8.3') }}"
@@ -32,7 +32,7 @@ openstack_servers:
     key_name: "{{GUID}}-keypair"
     network: "{{GUID}}-prod-network"
   - instance_name: frontend1
-    AnsibleGroup: load_balancers
+    AnsibleGroup: frontend_servers
     deployment: prod
     security_group_name: "{{GUID}}-HostSG"
     image: "{{ _server_image | default('rhel-8.3') }}"
