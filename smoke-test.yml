@@ -26,7 +26,7 @@
   tasks:
     - name: Check webserver for correct response
       uri:
-        url: "http://frontend1/ping"
+        url: "http://frontend1.d7c6.internal/ping"
         return_content: yes
       until: '"alive" in result.content'
       retries: 10
