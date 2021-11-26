@@ -32,4 +32,4 @@
       retries: 10
       delay: 1
       register: result
-      delegate_to: localhost
+      #delegate_to: localhost
