@@ -6,6 +6,11 @@
     name: "{{ flask_user }}"
     state: present
 
+- name: Install the 'Development tools' package group
+  yum:
+    name: "@Development tools"
+    state: present
+
 - name: Install flask packages
   package:
     name: "{{ __package }}"
