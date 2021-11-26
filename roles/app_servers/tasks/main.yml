@@ -6,11 +6,16 @@
     name: "{{ flask_user }}"
     state: present
 
+- name: Yum Clean
+  command: "sudo yum clean all"
+
+- name: Yum Update
+  command: "sudo yum update"
+
 - name: Install the 'Development tools' package group
   package:
     name: "@Development tools"
     state: present
-  ignore_errors: yes
 
 - name: Install flask packages
   package:
