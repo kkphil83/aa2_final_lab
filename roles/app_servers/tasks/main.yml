@@ -6,6 +6,9 @@
     name: "{{ flask_user }}"
     state: present
 
+- name: Yum Update
+  command: "sudo yum update"
+
 - name: Install the 'Development tools' package group
   package:
     name: "@Development tools"
