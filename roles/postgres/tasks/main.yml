@@ -1,6 +1,9 @@
 ---
 # tasks file for roles/postres
 
+- name: Check Pre-Install Postgres 12
+  command: "sudo dnf -y module disable postgresql"
+
 - name: Install Postgres packages
   package:
     name: "{{ __package }}"
@@ -9,6 +12,7 @@
   loop:
     - "{{ postgres_rhel8_repo }}"
     - "{{ postgres_packages }}"
+    - "{{ postgres_library }}"
   loop_control:
     loop_var: __package
 
