@@ -5,7 +5,6 @@ postgres_rhel8_repo: "https://download.postgresql.org/pub/repos/yum/reporpms/EL-
 postgres_packages:
   - postgresql12
   - postgresql12-server
-  - postgresql12-lib
 postgres_12_data_dir: /var/lib/pgsql/12/data
 postgres_12_bin_path: /usr/pgsql-12/bin
 postgres_service: postgresql-12.service
