@@ -36,10 +36,10 @@ to create roles and or collections from sound a sound ansible code base.
 ** setup firewalld
 * setup postgres
 ** firewalld rule opening 5432
-** install postgres 10
+** install postgres 12
 ** no data load phase - come back to that?
 * setup app tier
-** firewalld rule opening 443
+** firewalld rule opening 80,443
 
 === Development Environment
 
